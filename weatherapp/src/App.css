@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+body {
+  background-image: radial-gradient(circle, #ec97c8, #f48d99, #e48e6c, #c1964e, #919d49, #84a650, #73af5b, #5cb76a, #79c969, #99da66, #bbeb62, #e0fb5f);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -16,6 +19,18 @@
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  padding: 2rem 2rem;
+  
+}
+
+.day {
+  border-radius: 20px;
+  width: 10rem;
+  height: 15rem;
+  background-color: cadetblue;
+  
+  padding: 3rem 2rem;
 }
 
 .App-header {
@@ -40,4 +55,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.temps {
+  display: flex;
+  flex-direction: row; 
+  width: 10rem;
+  height: 5rem;
+}
+
+p {
+  padding: 1rem 1rem;
 }
