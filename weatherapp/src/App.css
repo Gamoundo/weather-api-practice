@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: radial-gradient(circle, #ec97c8, #f48d99, #e48e6c, #c1964e, #919d49, #84a650, #73af5b, #5cb76a, #79c969, #99da66, #bbeb62, #e0fb5f);
+  background-image: linear-gradient(to left top, #ec97c8, #c79ad9, #9a9ddd, #6b9fd5, #459dc2, #23a6bf, #06aeb5, #25b4a6, #40ca9e, #6edd8d, #a4ee77, #e0fb5f);
 }
 .App-logo {
   height: 40vmin;
@@ -29,8 +29,8 @@ body {
   width: 10rem;
   height: 15rem;
   background-color: cadetblue;
+  margin: 2rem;
   
-  padding: 3rem 2rem;
 }
 
 .App-header {

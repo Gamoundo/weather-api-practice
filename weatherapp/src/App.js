@@ -9,7 +9,7 @@ const [weather, setweather] = useState(
 )
 useEffect(
   () => {
-    fetch("http://api.weatherapi.com/v1/forecast.json?key=fe325598597046149c9172005212211&q=London&days=5")
+    fetch("http://api.weatherapi.com/v1/forecast.json?key=fe325598597046149c9172005212211&q=London&days=3")
   .then(resp => resp.json())
   .then(data => setweather(data))
   },
@@ -20,9 +20,10 @@ useEffect(
   
  const displayWeather= (arr) => {
       return(arr.map((ele) => {
+        let date = new Date(ele.date)
         return(
           <div className="day">
-            <h2>{ele.date}</h2>
+            <h2>{date.toDateString()}</h2>
             <img src={ele.day.condition.icon} alt={ele.day.condition.text} />
             <div className="temps">
                 <p>{ele.day.mintemp_f}F</p>
@@ -35,9 +36,10 @@ useEffect(
   }
 
   const displayDaily= (obj) => {
+    let date = new Date(obj.current.last_updated)
     return(
       <div className="day">
-        <h2>{obj.current.last_updated}</h2>
+        <h2>{date.toDateString()}</h2>
         <img src={obj.current.condition.icon} alt={obj.current.condition.text} />
         <div className="temps">
           <p>{obj.current.feelslike_f}F</p>
@@ -52,7 +54,7 @@ useEffect(
   return (
     <div className="App">
       <h1> Weather App</h1>
-      <h2>Your Weather For Today</h2>
+      {weather.location && <h2>Your Weather For Right Now(in {weather.location.name})</h2>}
       <div className="row">
         {weather.current && displayDaily(weather)}
       </div>
