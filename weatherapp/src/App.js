@@ -9,8 +9,13 @@ const [weather, setweather] = useState(
 )
 useEffect(
   () => {
-    fetch("http://api.weatherapi.com/v1/forecast.json?key=fe325598597046149c9172005212211&q=London&days=3")
-  .then(resp => resp.json())
+    fetch("http://api.weatherapi.com/v1/forecast.json?key=fe325598597046149c9172005212211&q=Bronx&days=4")
+  .then(resp =>  {
+    if(!resp.ok) {
+      throw new Error(resp.statusText)
+    }
+    return resp.json()
+  })
   .then(data => setweather(data))
   },
   [weather],
