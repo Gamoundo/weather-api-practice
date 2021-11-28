@@ -9,7 +9,7 @@ const [weather, setweather] = useState(
 )
 useEffect(
   () => {
-    fetch("http://api.weatherapi.com/v1/forecast.json?key=fe325598597046149c9172005212211&q=Bronx&days=4")
+    fetch("http://api.weatherapi.com/v1/forecast.json?key=fe325598597046149c9172005212211&q=Bronx&days=3")
   .then(resp =>  {
     if(!resp.ok) {
       throw new Error(resp.statusText)
